@@ -65,9 +65,9 @@
 
 # --------------"ONLINE" NAME GENERATOR-----------------#
 # print("Welcome to name generator!")
-# pet = (input("What is your pet? "))
-# city = (input("What is your home street? "))
-# print("Your 'online' name could be "+pet+" "+city+"!")
+# pet = (input("What is your first pet's name? "))
+# city = (input("What is your childhood street? "))
+# print("Your 'online' name could be: " + city + " " + pet + "!")
 
 #=====================DAY-2=============================#
 
@@ -172,9 +172,120 @@
 # print(f"-------Time left-------\nDays:{(days)}\nWeeks:{weeks}\nMonths:{months}\nYears:{years}")
 
 # -----------TIP CALCULATOR---------------
-bill = round(float(input("What was the bill? ")),2)
-percent = bill * (int(input("Percentage tip? 10, 12, or 15? ")) / 100)
-num_people = int(input("How many people splitting bill? "))
-final_bill = round(((bill + percent) / num_people), 2)
-print(f"Each person should pay: ${final_bill}")
+# bill = round(float(input("What was the bill? ")),2)
+# percent = bill * (int(input("Percentage tip? 10, 12, or 15? ")) / 100)
+# num_people = int(input("How many people splitting bill? "))
+# final_bill = round(((bill + percent) / num_people), 2)
+# print(f"Each person should pay: ${final_bill}")
 # --------------------------------------
+
+# ======================DAY 3===========================#
+
+#------------IF ELSE ----------------#
+# >
+# <
+# >=
+# <=
+# ==
+# !=
+
+# water_level = 50
+# test_level = 80
+
+# if water_level < test_level:
+#     print("LESS")
+# else:
+#     print("MORE")
+
+#------------------------------------
+# height = int(input("What is your height?"))
+
+# if height >= 120:
+#     print("CAN RIDE")
+# else:
+#     print("Can't ride...")
+#-----------ODD EVEN TEST--------------
+# Modular ==> (%)
+
+# num = int(input("Give number..."))
+
+# if (num % 2) == 0:
+#     print("EVEN")
+# else:
+#     print("ODD") 
+
+#-------line if else---------
+# print("EVEN") if num % 2 == 0 else print("ODD")
+
+#-------or if else----------
+
+# num = input("Give number...")
+# num_len = len(num)
+# x = 0
+
+# if num_len <= 1:
+#     x = int(num[0])
+# else:
+#     x = int(num[num_len-1])
+
+# # print(x)
+
+# if x == 0 or x == 2 or x == 4 or x == 6 or x == 8:
+#     print("EVEN")
+# else:
+#     print("ODD")
+
+#---------leap year test---------------
+
+# year = 2100
+
+
+# # Leap if year divisable by 4...
+# if year % 4 == 0:
+#     #except even divisable by 100
+#     if year % 100 == 0:
+#         # unless also divisable by 400
+#         if year % 400 == 0:
+#             print("YES")
+#         else:
+#             print("NO")
+#     else:
+#         print("YES")
+# else:
+#     print("NO")
+
+#---------if elif else-------
+# if conditions:
+#     ...
+# elif conditions2:
+#     ...
+# else:
+#     ...
+#--------Ticket challenge--------
+# photo = True
+# cost = 0
+# height = int(input("Height in cm? "))
+
+# if height > 120:
+#     print("Tall enough to ride!")
+#     age = int(input("Age? "))
+#     if age >= 18:
+#         print("Age 18 or older? Ticket $12.")
+#         cost += 12
+#     elif age <= 12:
+#         print("Age 12 or under? Ticket $5.")
+#         cost += 5
+#     else:
+#         print("Between 12 and 18? Tickets $7.")
+#         cost += 7
+#     photo = str(input("Photo (Y/N)? "))
+
+#     if photo == 'Y':
+#         cost += 3
+#     else:
+#         cost += 0
+
+#     print(f"Total cost for ride: ${cost}!")
+# else:
+#     print("Cant ride... :(")
+
