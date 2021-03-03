@@ -289,3 +289,81 @@
 # else:
 #     print("Cant ride... :(")
 
+# --------Pizza Challenge----------
+
+# print("Welcome to Python Pizza!")
+# size = input("What size pizza (S, M, L)? ")
+# add_pepperoni = input("Want pepperoni (Y/N)? ")
+# extra_cheese = input("Extra cheese (Y/N)? ")
+# cost = 0
+
+# if size == "S":
+#     cost += 15
+# elif size == "M":
+#     cost += 20
+# else:
+#     cost += 25
+
+# if size == "S" and add_pepperoni == "Y":
+#     cost += 2 
+# elif size == "M" and add_pepperoni == "Y":
+#     cost += 3
+# else:
+#     cost += 0
+
+# if extra_cheese == "Y":
+#     cost += 1 
+
+# print(f"Te price of your pizza is: ${cost}!")
+
+#-----------and, or, not---------------
+
+# -------Challenge LOVE CALCULATOR------
+# names_combined = input("What is their name? \n") + input("What is their name? \n")
+
+# true_arr = ['t','r','u','e']
+# love_arr = ['l','o','v','e']
+
+# true_count = 0
+# love_count = 0
+# final_number = 0
+
+# for i in true_arr:
+#     true_count += names_combined.lower().count(i)
+# for i in love_arr:
+#     love_count += names_combined.lower().count(i)
+
+# final_number = int(str(true_count)+str(love_count))
+
+# if final_number < 10 or final_number > 90:
+#     print(f"BAM!! {final_number}%!")
+# elif final_number >= 40 and final_number <= 50:
+#     print(f"Woo! {final_number}%!")
+# else:
+#     print(f"Your score is {final_number}%...")
+
+# ------choose adventure challenge
+# print('''
+# Welcome!
+#       __...--~~~~~-._   _.-~~~~~--...__
+#     //               `V'               \\ 
+#    //                 |                 \\ 
+#   //__...--~~~~~~-._  |  _.-~~~~~~--...__\\ 
+#  //__.....----~~~~._\ | /_.~~~~----.....__\\
+# ====================\\|//====================
+#                     `---`
+
+# ''')
+# q1 = input("Left or right (R/L)? \n").lower()
+# if q1 == "r":
+#     q2 = input("Swim or wait (S/W)? \n").lower()
+#     if q2 == "w":
+#         q3 = input("Which door (R, B, Y)? \n").lower()
+#         if q3 == "y":
+#             print("Winner!")
+#         else:
+#             print("Game over...")
+#     else:
+#         print("Game over...")
+# else:
+#     print("Game over...")
