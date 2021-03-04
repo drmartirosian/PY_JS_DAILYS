@@ -525,6 +525,105 @@
 # else:
 #     print(f"DRAW....\n {choices}")
 
+#============================DAY4============================#
+
+#-------------LOOPS------------------
+#FOR LOOP
+# for item in list:
+#   do something
+
+# fruits = ["Apple", "Orange", "Pear"]
+
+# for fruit in fruits:
+#     print(fruit)
+
+
+#-------------Average height----------
+# heights = [180,124,165,173,189,169,146]
+# heights_sum = 0
+# heights_length = len(heights)
+
+# for height in heights:
+#     heights_sum += height
+
+# average_height = round((heights_sum)/heights_length)
+
+# print(average_height)
+
+#--------MAX AND MIN--------------
+#FINDS HIGHEST/LOWEST VALUE IN ARRAY
+# scores = [180,124,165,173,189,169,146]
+# current_score = scores[0]
+# for score in scores:
+#     if score < current_score:
+#         current_score = score
+# print(current_score)
+
+#OR...
+# print(max(scores))
+# print(min(scores))
+
+#-------FOR LOOP WITH RANGE--------
+#          range(start,end,"step")
+# Step will skip by that number to next
+# always make end +1 to keep range where you want
+# for num in range(1,11,3):
+#     print(num) #1,4,7,10
+
+#-----Add even nums challenge---
+# answer = 0
+# for num in range(2,101,2):
+#     answer += num
+# print(answer)
+
+#-----------FIZZ BUZZ challenge
+# for num in range(1,11):
+#     if num % 2 == 0 and num % 5 == 0:
+#         print(f"FIZZBUZZ")
+#     elif num % 2 == 0:
+#         print(f"FIZZ")
+#     elif num % 5 == 0:
+#         print(f"BUZZ")
+#     else:
+#         print(f"NA")
+
+#-------------PASSWORD CHALLENGE------------------
+# import random
+# #[final password,num,letters,symbols,temp-cache]
+# choices = [
+#     '',
+#     int(input("# of numbers?")),
+#     int(input("# of letters?")),
+#     int(input("# of symbols?")),
+#     []]
+# #DATABASE
+# database = [
+#     list('qwertyuioplkjhgfdsazxcvbnm'),
+#     list('!@#$%^&*?'),
+#     list('0123456789')]
+
+# #NUMBERS
+# for choice in range(0, choices[1]):
+#     choices[4].append(random.choice(database[2]))
+# #LETTERS
+# for choice in range(0, choices[2]):
+#     choices[4].append(random.choice(database[0]))
+# #SYMBOLS
+# for choice in range(0, choices[3]):
+#     choices[4].append(random.choice(database[1]))
+# #SHUFFLE CACHE ARRAY, THEN ADD TO PASSWORD STR
+# random.shuffle(choices[4])
+# for x in choices[4]:
+#     choices[0] += x
+# #FINAL PASSWORD
+# print(choices[0])
+
+#-------------BLANK------------------
+#-------------BLANK------------------
+#-------------BLANK------------------
+#-------------BLANK------------------
+#-------------BLANK------------------
+#-------------BLANK------------------
 #-------------BLANK------------------
 #-------------BLANK------------------
 #-------------BLANK------------------
