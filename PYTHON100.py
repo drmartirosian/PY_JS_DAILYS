@@ -1,5 +1,6 @@
 #PYTHON100
 
+#======================DAY1=========================#
 # -----------------PRINT------------------------#
 # print("Hello world!")
 
@@ -69,7 +70,7 @@
 # city = (input("What is your childhood street? "))
 # print("Your 'online' name could be: " + city + " " + pet + "!")
 
-#=====================DAY-2=============================#
+#=====================DAY2=============================#
 
 # -----------------DATA TYPES---------------------#
 
@@ -179,7 +180,7 @@
 # print(f"Each person should pay: ${final_bill}")
 # --------------------------------------
 
-# ======================DAY 3===========================#
+# ======================DAY3===========================#
 
 #------------IF ELSE ----------------#
 # >
@@ -367,3 +368,166 @@
 #         print("Game over...")
 # else:
 #     print("Game over...")
+#============================DAY4============================#
+
+#------------Random-------------
+
+# import random
+# rand_int = random.randint(1,10)
+# rand_float = random.random()
+# rand_dec_int = rand_float*rand_int
+
+# print(rand_dec_int)
+
+#------------Importing-------------
+##File to import (my_module)
+# import my_module
+##Thing in imported file to print
+# print(my_module.pi)
+
+#-------------COIN-TOSS------------------
+
+# import random
+
+# coin = random.randint(1,2)
+
+# if coin == 1:
+#     print("HEADS")
+# else:
+#     print("TAILS")
+
+#--------------LIST/ARRAY-----------------
+# example_list = ['A','B','C','D']
+
+# # print(example_list[0]) #Alamaba
+# # print(example_list[-2]) #Samoa
+
+# #Replace specific value at position...
+# example_list[-2] = "E" 
+
+# #Add to end of list...
+# example_list.append("F")
+
+# #Add bunch of items...
+# example_list.extend(["X","Y","Z"])
+
+# #Insert between specific position...
+# example_list.insert(2,"J")
+
+# #Remove 1st item of this value... Error if none
+# try:
+#     example_list.remove("A") #if found...
+# except ValueError:
+#     pass  # do nothing!
+#     print("Not in list!")
+
+
+# print(example_list)
+
+#--------Name Picker Challenge-------
+# people = input("Give list of names seperated by a comma: \n").split(", ")
+# #people = ["Bob","Sally","Cody"]
+
+# import random
+# ran_num = random.randint(0, len(people)-1)
+# print(people[ran_num])
+
+#or...
+# import random
+# print(random.choice(people))
+
+#-------------nested list------------------
+# fruits = ["Strawberrys"]
+# vegitables = ["Kale"]
+# nest_list = [fruits,vegitables]
+
+#---------Treasure map challenge----------
+# row1 = [" ", " ", " "]
+# row2 = [" ", " ", " "]
+# row3 = [" ", " ", " "]
+
+# map = [row1,row2,row3]
+
+# print(f'   1    2    3\n1{row1}\n2{row2}\n3{row3}\n')
+
+# user_input = input("Where do you want to put the treasure...? \n")
+
+#---code below...
+# y = int(user_input[1])-1 #PICKS COLUMN
+# x = int(user_input[0])-1 #PICKS SLOT
+# map[y][x] = "X" #Replace at this row&item
+# print(f'{row1}\n{row2}\n{row3}\n')
+
+##OR...
+# if y == 1:
+#     row1[x] = 'X'
+# elif y ==2:
+#     row2[x] = 'X'
+# elif y == 3:
+#     row3[x] = 'X'
+# else:
+#     print("invalid nums...")
+
+# print(f'{row1}\n{row2}\n{row3}\n')
+
+
+
+#---------ROCK PAPER SCISSORS CHALLENGE--------------
+# import random
+# #input is your choice, random is bot's choice...
+# choices = input("Pick 0 for rock, 1 for paper, 2 for scissors: ")+str(random.randint(0,2))
+# outcomes = [['02','10','21'], ['01','12','20',]]
+# ascii_hand = [
+# """
+#     _______
+# ---'   ____)
+#       (_____)
+#       (_____)
+#       (____)
+# ---.__(___)
+# """,
+# """
+#      _______
+# ---'    ____)____
+#            ______)
+#           _______)
+#          _______)
+# ---.__________)
+# """,
+# """
+#     _______
+# ---'   ____)____
+#           ______)
+#        __________)
+#       (____)
+# ---.__(___)
+# """
+# ]
+
+# if choices in outcomes[0]:
+#     print(f'''
+#     WON!:{choices}
+#     YOU:
+#     {ascii_hand[int(choices[0])]}
+#                  VS.
+#     {ascii_hand[int(choices[1])]}
+#     BOT:
+#     ''')
+# elif choices in outcomes[1]:
+#         print(f'''
+#     LOST!:{choices}
+#     YOU:
+#     {ascii_hand[int(choices[0])]}
+#                  VS.
+#     {ascii_hand[int(choices[1])]}
+#     BOT:
+#     ''')
+# else:
+#     print(f"DRAW....\n {choices}")
+
+#-------------BLANK------------------
+#-------------BLANK------------------
+#-------------BLANK------------------
+#-------------BLANK------------------
+#-------------BLANK------------------
+#-------------BLANK------------------
