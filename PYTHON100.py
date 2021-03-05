@@ -618,9 +618,37 @@
 # #FINAL PASSWORD
 # print(choices[0])
 
-#-------------BLANK------------------
-#-------------BLANK------------------
-#-------------BLANK------------------
+#==================DAY6=============================
+#-------------FUNCTIONS-WHILE LOOPS------------------
+
+# #Function, def => DEFINE
+# def my_function(word):
+#     print(word)
+
+# #Call function
+# for fun in range(3):
+#     my_function("Hello world!")
+
+#-------------FOR & WHILE LOOPS------------------
+# list_of_items = [item1,item2,item3]
+# for item in list_of_items:
+#     print(item)
+
+# for something in range(a,b):
+#     print(num)
+
+# while something_is_true:
+#     do something repeatedly
+
+# test = False
+# while test != True:
+#     test = True
+# print("test!!")
+
+#Or...
+# while not something:
+#     do this...
+
 #-------------BLANK------------------
 #-------------BLANK------------------
 #-------------BLANK------------------
