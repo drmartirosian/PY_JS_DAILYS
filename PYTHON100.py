@@ -651,115 +651,121 @@
 
 #====================DAY7======================#
 #-------------HANGMAN------------------
-import random
-secret_word = list('test')
-guesses = []
-current_guess = ''
-chances_left = 6
-points_to_win = 0
-HANGMANPICS = ['''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========''']
+# import random
+# secret_word = list('test')
+# guesses = []
+# current_guess = ''
+# chances_left = 6
+# points_to_win = 0
+# hangman_pics = ['''
+#   +---+
+#   |   |
+#       |
+#       |
+#       |
+#       |
+# =========''', '''
+#   +---+
+#   |   |
+#   O   |
+#       |
+#       |
+#       |
+# =========''', '''
+#   +---+
+#   |   |
+#   O   |
+#   |   |
+#       |
+#       |
+# =========''', '''
+#   +---+
+#   |   |
+#   O   |
+#  /|   |
+#       |
+#       |
+# =========''', '''
+#   +---+
+#   |   |
+#   O   |
+#  /|\  |
+#       |
+#       |
+# =========''', '''
+#   +---+
+#   |   |
+#   O   |
+#  /|\  |
+#  /    |
+#       |
+# =========''', '''
+#   +---+
+#   |   |
+#   O   |
+#  /|\  |
+#  / \  |
+#       |
+# =========''']
+# current_hangman = 0
+# current_blanks = []
+# for item in secret_word: 
+#     current_blanks.append('_')
 
-#make function for making guesses
-def make_guess():
-    global secret_word, guesses, current_guess, chances_left,points_to_win
-    while chances_left > 0:
-        current_guess = input("Guess a letter: ")
-        if check_repeat() == True:
-            print(f"Already guessed this! PAST GUESSES: {guesses}")
-        elif check_repeat() == False:
-            guesses.append(current_guess)
-            if check_match() == True:
-                answer_right()
-            elif check_match() == False:
-                answer_wrong()
-        if points_to_win >= len(secret_word):
-            game_end()
-    game_end()
-#Make sure no repeat guesses
-def check_repeat():
-    global secret_word, guesses, current_guess, chances_left,points_to_win    
-    if current_guess in guesses:
-            return True
-    elif current_guess not in guesses:
-        return False
-#Check if new guess matches secret word
-def check_match():
-    global secret_word, guesses, current_guess, chances_left,points_to_win    
-    if current_guess in secret_word:
-        return True
-    elif current_guess not in secret_word:
-        return False
-#If right answer...
-def answer_right():
-    global secret_word, guesses, current_guess, chances_left, points_to_win
-    for i in secret_word:
-        if current_guess == i:
-            points_to_win += 1
-    print(points_to_win)
-    print("RIGHT!")
-#if wrong answer...
-def answer_wrong():
-    global secret_word, guesses, current_guess, chances_left,points_to_win    
-    chances_left -= 1
-    print("WRONG!")
-#How game ends
-def game_end():
-    global secret_word, guesses, current_guess, chances_left,points_to_win   
-    if points_to_win == len(secret_word):
-        print("WINNER!")
-    elif chances_left <= 0:
-        print("LOST!")
-#Call make guess function
-make_guess()
+# #make function for making guesses
+# def make_guess():
+#     global secret_word, guesses, current_guess, chances_left,points_to_win, current_hangman, current_blanks
+#     print(f"{hangman_pics[0]} \n {current_blanks}")
+#     while chances_left > 0:
+#         current_guess = input("Guess a letter: ")
+#         if check_repeat() == True:
+#             print(f"Already guessed this! PAST GUESSES: {guesses}")
+#         elif check_repeat() == False:
+#             guesses.append(current_guess)
+#             if check_match() == True:
+#                 answer_right()
+#             elif check_match() == False:
+#                 answer_wrong()
+#         if points_to_win >= len(secret_word):
+#             game_end()
+#     game_end()
+# #Make sure no repeat guesses
+# def check_repeat():
+#     global secret_word, guesses, current_guess, chances_left,points_to_win    
+#     if current_guess in guesses:
+#             return True
+#     elif current_guess not in guesses:
+#         return False
+# #Check if new guess matches secret word
+# def check_match():
+#     global secret_word, guesses, current_guess, chances_left,points_to_win    
+#     if current_guess in secret_word:
+#         return True
+#     elif current_guess not in secret_word:
+#         return False
+# #If right answer...
+# def answer_right():
+#     global secret_word, guesses, current_guess, chances_left,points_to_win, current_hangman, current_blanks
+#     for i in secret_word:
+#         if current_guess == i:
+#             current_blanks[secret_word.index(i)] = i
+#             points_to_win += 1
+#     print(f"RIGHT!")
+# #if wrong answer...
+# def answer_wrong():
+#     global secret_word, guesses, current_guess, chances_left,points_to_win    
+#     chances_left -= 1
+#     print(f"{hangman_pics[-6+chances_left]} \n")
+#     print("WRONG!")
+# #How game ends
+# def game_end():
+#     global secret_word, guesses, current_guess, chances_left,points_to_win   
+#     if points_to_win == len(secret_word):
+#         print("WINNER!")
+#     elif chances_left <= 0:
+#         print("LOST!")
+# #Call make guess function
+# make_guess()
 
 
 #-------------BLANK------------------
