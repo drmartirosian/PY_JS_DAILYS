@@ -652,72 +652,116 @@
 #====================DAY7======================#
 #-------------HANGMAN------------------
 import random
-secret_word  = random.choice(["ardvark", "baboon", "camel"])
+secret_word = list('test')
+guesses = []
 current_guess = ''
-past_guesses = []
-guesses = 0
+chances_left = 6
+points_to_win = 0
+HANGMANPICS = ['''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========''']
 
-
+#make function for making guesses
 def make_guess():
-    global guesses, current_guess, secret_word, past_guesses
-    #Keep guessing until all 6 limbs attached to hangman...
-    while guesses < 6:
-        #1. Keep asking for letters while hangman incomplete...
+    global secret_word, guesses, current_guess, chances_left,points_to_win
+    while chances_left > 0:
         current_guess = input("Guess a letter: ")
-        #2. check for repeat guess
-        if repeat_check() == False:
-            #3. Check for match
-            guesses += 1
-            if match_check() == True:
-                print("MATCH!")
-            elif match_check() == False:
-                print("NOT MATCH!")
-        elif repeat_check() == True:
-            print("Repeat guess, try again!")
+        if check_repeat() == True:
+            print(f"Already guessed this! PAST GUESSES: {guesses}")
+        elif check_repeat() == False:
+            guesses.append(current_guess)
+            if check_match() == True:
+                answer_right()
+            elif check_match() == False:
+                answer_wrong()
+        if points_to_win >= len(secret_word):
+            game_end()
     game_end()
-
-def repeat_check():
-    global guesses, current_guess, secret_word, past_guesses
-    answer = False
-    if len(past_guesses) == 0:
-        return False
-    elif len(past_guesses) > 0:
-        for past in past_guesses:
-            if current_guess != past and answer != True:
-                answer = False
-            elif current_guess == past:
-                answer = True
-        return answer
-
-def match_check():
-    global guesses, current_guess, secret_word, past_guesses
-    for sec in secret_word:
-        if current_guess == sec:
+#Make sure no repeat guesses
+def check_repeat():
+    global secret_word, guesses, current_guess, chances_left,points_to_win    
+    if current_guess in guesses:
             return True
-        elif current_guess != sec:
-            return False
-
-def wrong_guess():
-    global guesses, current_guess, secret_word, past_guesses
-    #Penalty for wrong guesses...
-    past_guesses.append(current_guess)
-    print(f"Wrong...{past_guesses}")
-
-def right_guess():
-    global guesses, current_guess, secret_word, past_guesses
-    past_guesses.append(current_guess)
-    # secret_word = list(secret_word)
-    # secret_word.remove(current_guess)
-    print(f"Correct! {past_guesses}")
-
+    elif current_guess not in guesses:
+        return False
+#Check if new guess matches secret word
+def check_match():
+    global secret_word, guesses, current_guess, chances_left,points_to_win    
+    if current_guess in secret_word:
+        return True
+    elif current_guess not in secret_word:
+        return False
+#If right answer...
+def answer_right():
+    global secret_word, guesses, current_guess, chances_left, points_to_win
+    for i in secret_word:
+        if current_guess == i:
+            points_to_win += 1
+    print(points_to_win)
+    print("RIGHT!")
+#if wrong answer...
+def answer_wrong():
+    global secret_word, guesses, current_guess, chances_left,points_to_win    
+    chances_left -= 1
+    print("WRONG!")
+#How game ends
 def game_end():
-    global guesses, current_guess, secret_word, past_guesses
-    print(f"Game end! {secret_word}")
-
+    global secret_word, guesses, current_guess, chances_left,points_to_win   
+    if points_to_win == len(secret_word):
+        print("WINNER!")
+    elif chances_left <= 0:
+        print("LOST!")
+#Call make guess function
 make_guess()
 
 
-#-------------BLANK------------------
 #-------------BLANK------------------
 #-------------BLANK------------------
 #-------------BLANK------------------
