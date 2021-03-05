@@ -649,8 +649,74 @@
 # while not something:
 #     do this...
 
-#-------------BLANK------------------
-#-------------BLANK------------------
+#====================DAY7======================#
+#-------------HANGMAN------------------
+import random
+secret_word  = random.choice(["ardvark", "baboon", "camel"])
+current_guess = ''
+past_guesses = []
+guesses = 0
+
+
+def make_guess():
+    global guesses, current_guess, secret_word, past_guesses
+    #Keep guessing until all 6 limbs attached to hangman...
+    while guesses < 6:
+        #1. Keep asking for letters while hangman incomplete...
+        current_guess = input("Guess a letter: ")
+        #2. check for repeat guess
+        if repeat_check() == False:
+            #3. Check for match
+            guesses += 1
+            if match_check() == True:
+                print("MATCH!")
+            elif match_check() == False:
+                print("NOT MATCH!")
+        elif repeat_check() == True:
+            print("Repeat guess, try again!")
+    game_end()
+
+def repeat_check():
+    global guesses, current_guess, secret_word, past_guesses
+    answer = False
+    if len(past_guesses) == 0:
+        return False
+    elif len(past_guesses) > 0:
+        for past in past_guesses:
+            if current_guess != past and answer != True:
+                answer = False
+            elif current_guess == past:
+                answer = True
+        return answer
+
+def match_check():
+    global guesses, current_guess, secret_word, past_guesses
+    for sec in secret_word:
+        if current_guess == sec:
+            return True
+        elif current_guess != sec:
+            return False
+
+def wrong_guess():
+    global guesses, current_guess, secret_word, past_guesses
+    #Penalty for wrong guesses...
+    past_guesses.append(current_guess)
+    print(f"Wrong...{past_guesses}")
+
+def right_guess():
+    global guesses, current_guess, secret_word, past_guesses
+    past_guesses.append(current_guess)
+    # secret_word = list(secret_word)
+    # secret_word.remove(current_guess)
+    print(f"Correct! {past_guesses}")
+
+def game_end():
+    global guesses, current_guess, secret_word, past_guesses
+    print(f"Game end! {secret_word}")
+
+make_guess()
+
+
 #-------------BLANK------------------
 #-------------BLANK------------------
 #-------------BLANK------------------
