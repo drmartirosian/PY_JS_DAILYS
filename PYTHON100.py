@@ -767,10 +767,75 @@
 # #Call make guess function
 # make_guess()
 
+#==============================DAY8=====================================#
+#-------------function arguments (inputs)------------------
+# Paramater = argument
+# something = 'Daniel'
+# def greet(z):
+#     print(f"Hey,{z}1")
+#     print(f"Hey,{z}2")
+#     print(f"Hey,{z}3")
+# greet(something)
 
-#-------------BLANK------------------
-#-------------BLANK------------------
-#-------------BLANK------------------
-#-------------BLANK------------------
+# def greet_with(name,location):
+#     print(f"Hello, {name}! \nWhat's it like in {location}?")
+# greet_with("Daniel", "USA")
+
+# def example_func(a,b,c):
+#     print(f"{a}{b}{c}")
+# example_func(c=3,b=2,a=1)
+
+#-------------paint wall challenge------------------
+#math to round up to ceiling
+# import math
+# def paint_wall(a,b):
+#     cans = ((a*b)/5)
+#     print(math.ceil(cans))
+# paint_wall(7,13)
+
+#-------------prime number checker------------------
+#Prime # = any number that can't be broken down further by division...
+# def prime_num(num):
+#     is_prime = True
+
+#     for n in range(2,num):
+#         if num % n == 0:
+#             is_prime = False
+
+#     if is_prime == True:
+#         print("PRIME")
+#     else:
+#         print("NOT PRIME")
+# prime_num(3)
+# prime_num(4)
+# prime_num(5)
+
+
+#-------------CEASAR CIPHER CHALLENGE------------------
+# alphabet = list('abcdefghijklmnopqrstuvwxyz')
+# message = [list(input("Give a message: ")),[],'']
+# shift = int(input("Give a number: "))
+
+# def message_index():
+#     for m in message[0]:
+#         for a in alphabet:
+#             if m == a:
+#                 message[1].append(alphabet.index(a))
+
+# def scrambler():
+#     alphabet.append(alphabet.pop(0))
+
+# def ceaser_cipher():
+#     global message, shift, alphabet
+#     message_index()
+#     while shift >= 1:
+#         scrambler()
+#         shift -= 1
+#     for idx in message[1]:
+#         message[2] += alphabet[idx]
+#     print(f"Your scrambled message is now: {message[2]}")
+
+# ceaser_cipher()
+
 #-------------BLANK------------------
 #-------------BLANK------------------
