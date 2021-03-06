@@ -837,5 +837,115 @@
 
 # ceaser_cipher()
 
+#================================DAY9==================================================#
+#-------------Dictionaries------------------
+#{KEY:VALUE, KEY:VALUE,KEY:VALUE}
+# dictionary = {
+#     "a":"1", 
+#     "b":"2", 
+#     "c":"3"
+# }
+
+# print(dictionary)
+# print(dictionary.items())
+# print(dictionary.values())
+# print(dictionary["b"])
+# print(dictionary[3])
+# dictionary[4] = "d"
+# dictionary = {}
+# print(dictionary)
+
+#To get keys...
+# for key in dictionary:
+#     print(f"{key}=>{dictionary[key]}")
+
+#-------------grading challenge------------------
+# student_scores = {
+#     "Harry":80,
+#     "Ron":14,
+#     "Hermiony":92,
+#     "Draco":93,
+#     "Headwig":100
+# }
+
+# def get_student_grades():
+#     for student in student_scores:
+#         student_scores[student]
+#         if student_scores[student] >= 90:
+#             print(f"{student} scored an A!!!")
+#         elif student_scores[student] >= 80:
+#             print(f"{student} scored an B!")
+#         elif student_scores[student] >= 70:
+#             print(f"{student} scored an C.")
+#         elif student_scores[student] >= 60:
+#             print(f"{student} scored an D...?")
+#         else:
+#             print(f"{student} scored an F...")
+
+# get_student_grades()
+
+
+#-------------nesting------------------
+# test = {
+#     'key1':['1','2','3'],
+#     'key2':{'a':'X','b':'Y','c':'Z'}
+# }
+
+#-------------country dictionaries challenge------------------
+# travel_log = [
+#     {
+#         'country':'America',
+#         'visits':50,
+#         'cities':['Los Angeles','Houson','El Paso']
+#     }
+# ]
+
+# def add_log(country,visits,cities):
+#     global travel_log
+#     new_country = {}
+#     new_country['country'] = country
+#     new_country['visits'] = visits
+#     new_country['cities'] = cities
+#     travel_log.append(new_country)
+#     for key in travel_log:
+#         print(key)
+
+# add_log('Australia',1,['Canberra','Sydney'])
+
+#-------------BLIND AUCTION CHALLENGE------------------
+# users = []
+# winner = ''
+
+# def get_info():
+#     global users
+#     winner = 0
+#     winner_name = ''
+#     username = input("Username? ")
+#     bid = int(input("Bid? "))
+
+#     new_user = {}
+#     new_user['username'] = username
+#     new_user['bid'] = bid
+#     users.append(new_user)
+
+#     other_users = input("Are there other players (y/n)? ")
+
+#     if other_users == 'y':
+#         get_info()
+#     elif other_users == 'n':
+#         for user in users:
+#             if user['bid'] > winner:
+#                 winner = user['bid']
+#                 winner_name = user['username']
+#         print(winner_name)
+
+# get_info()
+
+
+#-------------BLANK------------------
+#-------------BLANK------------------
+#-------------BLANK------------------
+#-------------BLANK------------------
+#-------------BLANK------------------
 #-------------BLANK------------------
 #-------------BLANK------------------
