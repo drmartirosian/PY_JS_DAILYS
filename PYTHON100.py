@@ -941,11 +941,85 @@
 
 # get_info()
 
+#============================DAY10=========================================#
+#-------------Name Cap Corrector------------------
+
+# def format_name(full_name):
+#     full_name = full_name.split(' ')
+#     new_name = ''
+#     for name in full_name:
+#         cache = name[0].upper()
+#         for letter in range(1,len(name)):
+#             cache += name[letter].lower()
+#         new_name += cache+" "
+#     return new_name
+# print(format_name("JOHN MCLANE"))
+# print(format_name("boB jELlY"))
+# print(format_name("bob boBert"))
+
+#OR...
+
+# f_name = "anGela"
+# print(f_name.title())
+
+#-------------CALCULATOR------------------
+#FIRST NUMBER
+#OPERATOR
+#SECOND NUMBER
+#CONTINUE (Y/N)? => REPEAT OPERATOR,2ND NUM
+#START OVER
+
+# def calculator():
+#     num1 = int(input("What's the first number? "))
+#     repeat = True
+#     while repeat == True:
+#         operator = input("Pick the operator (+,-,*,/)? ")
+#         num2 = int(input("What is the 2nd number? "))
+#         if operator == "+":
+#             num1 = num1 + num2
+#             continue_calc = input("Continue (y/n)? ")
+#         if continue_calc == 'y':
+#             repeat = True
+#         elif continue_calc == 'n':
+#             repeat = False
+#     return num1
+
+# calculator()
+
+
+# import operator
+# ops = {
+# '+' : operator.add,
+# '-' : operator.sub,
+# '*' : operator.mul,
+# '/' : operator.truediv, 
+# }
+# # print(ops["+"](1,1)) #TEST
+
+# def calculator():
+#     num1 = int(input("Pick a number: "))
+#     repeat_calc = True
+
+#     while repeat_calc == True:
+#         #Gather info
+#         current_op = str(input("Pick operator(+,-,/,*): "))
+#         num2 = int(input("Pick 2nd number: "))
+#         #Run calculation
+#         num1 = round(ops[current_op](num1,num2))
+#         print(num1)
+#         #Continue?
+#         continue_calc = input("Keep calculating(y/n)? ")
+#         if continue_calc == 'y':
+#             repeat_calc = True
+#         elif continue_calc == 'n':
+#             repeat_calc = False
+#         else:
+#             print("NANI?!")
+
+# calculator()
 
 #-------------BLANK------------------
 #-------------BLANK------------------
 #-------------BLANK------------------
 #-------------BLANK------------------
-#-------------BLANK------------------
-#-------------BLANK------------------
-#-------------BLANK------------------
+#-------------BLANK------------------:
