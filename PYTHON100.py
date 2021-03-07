@@ -1008,13 +1008,11 @@
 #         num1 = round(ops[current_op](num1,num2))
 #         print(num1)
 #         #Continue?
-#         continue_calc = input("Keep calculating(y/n)? ")
-#         if continue_calc == 'y':
+#         if input("Keep calculating(y/n)? ") == 'y':
 #             repeat_calc = True
-#         elif continue_calc == 'n':
-#             repeat_calc = False
 #         else:
-#             print("NANI?!")
+#             repeat_calc = False
+     
 
 # calculator()
 
