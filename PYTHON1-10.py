@@ -839,7 +839,7 @@
 
 #================================DAY9==================================================#
 #-------------Dictionaries------------------
-#{KEY:VALUE, KEY:VALUE,KEY:VALUE}
+#{KEY:VALUE,KEY:VALUE,KEY:VALUE}
 # dictionary = {
 #     "a":"1", 
 #     "b":"2", 

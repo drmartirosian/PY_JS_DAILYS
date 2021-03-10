@@ -95,7 +95,64 @@
 
 #=====================DAY14===================================#
 
+#HIGHER LOWER GAME
+import random
+my_list = {
+    "bob":1, 
+    "tree":2, 
+    "bird":3
+}
 
-#-------------DEBUGGING----------
-#-------------DEBUGGING----------
 
+def game_end():
+    print("END...")
+
+def user_response():
+    user_said = input("HIGHER, LOWER, QUIET(h/l/q)?: ")
+    if user_said == "h":
+        return 'h'
+    elif user_said == 'l':
+        return 'l'
+    else:
+        game_end()
+    
+def setup_game():
+    for key in my_list:
+        print(f"{key}=>{my_list[key]}")
+
+def run_game():
+    #set 
+    item_a = random.choice(list(my_list))
+    item_b = random.choice(list(my_list))
+
+    # print(my_list)
+    # print(f"{item_a}=>{my_list[item_a]}")
+    print(f"{item_a} vs. {item_b}")
+    user_input = user_response()
+    user_score = 0
+
+    if user_input == 'h' and my_list[item_a] > my_list[item_b]:
+        user_score += 1
+        print("WINNER")
+    elif user_input == 'l' and my_list[item_a] < my_list[item_b]:
+        user_score += 1
+        print("WINNER")
+    else:
+        print(user_score)
+        game_end()
+
+run_game()
+
+
+
+# # PRINT EVERYTHNG
+# print(my_list.items())
+# # PRINT ALL VALUES
+# print(my_list.values())
+# # PRINT VALUE OF KEY
+# print(my_list["bird"])
+# # MAKE NEW
+# my_list['cat'] = 10
+# print(random.choice(list(my_list.keys())))
+
+# print(my_list)
