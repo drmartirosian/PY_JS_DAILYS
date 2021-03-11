@@ -159,4 +159,97 @@
 
 #=========================DAY15=========================================#
 
+#INSTALL PYCHARM...
 
+#----------------COFFEE MACHINE CHALLENGE--------------
+# REQUIREMENTS
+# 1. PRINT RESOURCES
+# 2. Check of resources sufficient
+
+
+# flavors = [
+#     {
+#     'name':'expresso', 
+#     'price':1.50,
+#     'ingredients':{'water':50,'coffee':18,'milk':0}
+#     },
+#     {
+#     'name':'latte',
+#     'price':2.50,
+#     'ingredients':{'water':200,'coffee':24,'milk':150}
+#     },
+#     {
+#     'name':'cappuccino',
+#     'price':3.00,
+#     'ingredients':{'water':250,'coffee':24,'milk':100}    
+#     }
+# ]
+# # [Water, coffee, milk]
+# machine_resorces = [300,100,200]
+# #pennies, nickels, dimes, quarters
+# coin_values = [0.01,0.05,0.10,0.25]
+# chosen_coffee = {}
+# ammount_owed = 0
+# # print(flavors[0]['name'])
+# # print(flavors[0]['price'])
+# # print(flavors[0]['ingredients'])
+
+# def pay_machine():
+#     global ammount_owed
+#     print("Please insert coins: ")
+#     #amount user pays in
+#     temp_amount = coin_values[0]*int(input("pennies? ")) + coin_values[1]*int(input("nickels? ")) + coin_values[2]*int(input("dimes? ")) + coin_values[3]*int(input("quarters? "))
+#     #subtract coins from amount owed for coffee        
+#     ammount_owed = ammount_owed - temp_amount
+#     if ammount_owed <= 0:
+#         print('THANK YOU!')
+#     else:
+#         print("Not quiet enough!")
+#         pay_machine()
+
+# def pick_coffee():
+#     global chosen_coffee, ammount_owed
+#     # Get users desired coffee e.g. 'latte'
+#     temp_coffee = input("What would you like? (expresso/latte/cappuccino): ")
+
+#     #Get the ingredients for that coffee
+#     for flavor in flavors:
+#         #If user request exists in machine array
+#         if temp_coffee == flavors[flavors.index(flavor)]['name']:
+#             #set chosen coffee to coffee's ingredients
+#             chosen_coffee = flavors[flavors.index(flavor)]
+#             ammount_owed = flavors[flavors.index(flavor)]['price']
+
+# def enough_resources():
+#     global chosen_coffee, machine_resorces
+#     cof_res = []
+    
+#     #put ingredient amounts for chosen coffee into array form [water,coffee,milk]
+#     for ingred in chosen_coffee['ingredients']:
+#         # print(f"{ingred} => {chosen_coffee['ingredients'][ingred]}")
+#         cof_res.append(chosen_coffee['ingredients'][ingred])
+#         # print(chosen_coffee['ingredients'][ingred])
+
+#     # Compare to machine resources, true if enough to make
+#     if machine_resorces[0] >= cof_res[0]:
+#         if machine_resorces[1] >= cof_res[1]:
+#             if machine_resorces[2] >= cof_res[2]:
+#                 # print(machine_resorces)
+#                 # print(cof_res)
+#                 machine_resorces = [machine_resorces[0]-cof_res[0], machine_resorces[1]-cof_res[1], machine_resorces[2]-cof_res[2]]
+#                 return True
+#     else:
+#         return False
+
+# def run_machine():
+#     pick_coffee()
+#     if enough_resources() == True:
+#         print("Enough to make coffee!")
+#         print(f"MACHINE RESOURCES LEFT: {machine_resorces}")
+#         print(f"coffee price: {ammount_owed}")
+#     else:
+#         print("Not enough ingredents for coffee... :(")
+#     pay_machine()
+    
+
+# run_machine()
