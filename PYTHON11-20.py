@@ -251,5 +251,13 @@
 #         print("Not enough ingredents for coffee... :(")
 #     pay_machine()
     
-
 # run_machine()
+
+#==============================DAY16=====================================#
+#-------------OOP and CLASSES / OBJECTS---------------------
+#CLASSES => BLUEPRINTS THAT GENERATE OBJECTS
+#OBJECTS => MADE BY CLASSES, 
+
+#        object      class
+# e.g. => car = CarBluePrint()
+
