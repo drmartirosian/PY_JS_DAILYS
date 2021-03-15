@@ -15,8 +15,8 @@
 # test.shape('turtle')
 # test.color('red')
 # for i in range(6):
-#     test.forward(100) #move forward 100
-#     test.right(300) #turn at 300 angle
+#     test.forward(100) 
+#     test.right(300) 
 # #SQUARE
 # test.color('green')
 # for i in range(4):
