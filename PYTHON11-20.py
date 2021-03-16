@@ -261,3 +261,60 @@
 #        object      class
 # e.g. => car = CarBluePrint()
 
+#==========================DAY17====================================#
+#pass => skip, place holder...
+#Classes named by Pascal Casing (e.g. "PascalCasing")
+# class User:
+#     #Constructor - part of Class, AKA initializes Class
+#     #   Constructor(object_being_made, any_peramiters)
+#     #                    (paramaters)
+#     def __init__(self,user_id,username):
+#         #initialize attributes...
+#         # print("TEST") #Runs every time new object from this class...
+#         #ID => attribute...
+#         self.id = user_id
+#         self.username = username
+
+#ATTRIBUTES = CHARACTERISTICS OF OBJECTS MADE
+#METHODS => THINGS CLASS CAN DO (FUNCTIONS)
+
+
+#OLD CODE BEFORE CONSTRUCTOR...
+# class User()
+#     pass
+# user_1 = User()
+# user_1.id = '001'
+# user_1.username = 'daniel'
+
+# user_2 = User()
+# user_2.id = '002'
+# user_2.username = 'jack'
+
+# print(user_1.username)
+
+#SO...
+
+# #CLASS
+# class User:
+#     #CONSTRUCTOR
+#     def __init__(self,user_id,username):
+#         self.id = user_id
+#         self.username = username
+#         #No need for paramater, automaticallly sets to 0...
+#         self.followers = 0
+#         self.following = 0
+#     #METHOD1
+#     def add_followers(self):
+#         self.followers += 1
+#         self.following += 1
+
+# user_1 = User('001','daniel')
+# user_2 = User('002','jack')
+# user_1.add_followers()
+# user_1.add_followers()
+
+# print(user_1.followers)
+# print(user_2.followers)
+
+
+ 
