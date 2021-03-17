@@ -316,5 +316,3 @@
 # print(user_1.followers)
 # print(user_2.followers)
 
-
- 
