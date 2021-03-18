@@ -1,39 +1,40 @@
-# # from turtle import * #IMPORT EVERYTHING
-# from turtle import Turtle,Screen
+from turtle import Turtle, Screen
+from random import randint
+import random
+my_screen = Screen() # Show in screen, 
+my_screen.colormode(255)
+timmy = Turtle() #Generate turtle object "timmy"
+timmy.pensize(15)
+timmy.speed('fastest')
+timmy.shape("turtle")
 # #==============================START====================================#
-# timmy = Turtle() #Generate turtle object "timmy"
+def colors():
+    r = randint(0,255)
+    g = randint(0,255)
+    b = randint(0,255)
+    rand_rgb = (r,g,b)
+    return rand_rgb
 
-# # timmy.shape("turtle")
-# # timmy.dot(100,'blue')
-
-# # for i in range(10):
-# #     timmy.pendown()
-# #     timmy.forward(10)
-# #     timmy.penup()
-# #     timmy.forward(10)
-
-
-# #SHAPES GENERATOR
-# #          3  4  5  6  7  8  9  10
-# angles = [120,90,72,69,51,45,40,36]
-# num_turns = 3
-# current_angle_len = 0
-
-# for j in range(len(angles)+1):
-#     for i in range(num_turns):
-#         print(i)
-#         timmy.left(angles[current_angle_len])
-#         timmy.forward(100)
-#     num_turns += 1
-#     current_angle_len+=1
-
-    
-
-
+def dot_generator():
+    #SHIFT TO NEW ROW
+    for _ in range(10):
+        #FILL OUT ROW
+        for _ in range(10):
+            timmy.color(colors())
+            timmy.pendown()
+            timmy.circle(5)
+            timmy.penup()
+            timmy.forward(50)
+        timmy.penup()
+        timmy.right(90)
+        timmy.forward(50)
+        timmy.left(90)
+        timmy.backward(500)
+        timmy.pendown()
+dot_generator()
 
 
 
 # #================================END=====================================#
-# my_screen = Screen() # Show in screen, 
-# my_screen.exitonclick() # exist ONLY on click
+my_screen.exitonclick() # exist ONLY on click
 
