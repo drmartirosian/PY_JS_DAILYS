@@ -17,7 +17,6 @@ screen.onkey(snake.right,"Right")
 screen.onkey(snake.up,"Up")
 screen.onkey(snake.down,"Down")
 
-    
 game_is_on = True 
 while game_is_on: 
     screen.update() #refresh screen
