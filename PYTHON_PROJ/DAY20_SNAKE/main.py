@@ -1,45 +1,22 @@
-#-------------------IMPORTS
 from turtle import Screen, Turtle
 from random import randint, random
+from snake import Snake
 import time
-#-------------------SCREENS
+
 screen = Screen()
-screen.setup(width=600,height=600) #Screen dimensions
+screen.setup(width=600,height=600) 
 screen.bgcolor('black')
 screen.title('Snake Game')
-screen.tracer(0) #no animations, keep snake body together
-#====================START=============================#
+screen.tracer(0)
 
-#GENERATE SNAKE SEGMENTS
-start_positions = [(0,0),(-20,0),(-40,0)] #(x,y)
-segments = []#Hold snake bodies
-for position in start_positions: #make new segment
-    new_segment = Turtle(shape="square")
-    new_segment.color('white')
-    new_segment.penup()
-    new_segment.goto(position)
-    segments.append(new_segment) #add new segment
+snake = Snake()
     
-#MOVE SNAKE (SET PRIOR SEGMENTS TO X,Y OF SEGMENT AHEAD OF IT)
 game_is_on = True 
 while game_is_on: 
     screen.update()
-    time.sleep(0.1)#Delays execution for certain time
-    for seg_num in range(len(segments)-1,0,-1): #Move segments by rear segments taking x,y of front segments(start, stop, step)
-        new_x = segments[seg_num-1].xcor() #x coord of 2nd to last
-        new_y = segments[seg_num-1].ycor() #y coord of 2nd to last
-        segments[seg_num].goto(new_x,new_y) #last segment
-    segments[0].forward(20)
+    time.sleep(0.1)
+
+    snake.move()
 
 
-
-
-
-
-
-
-
-
-
-#======================START=======================#
 screen.exitonclick()
