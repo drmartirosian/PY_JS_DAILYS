@@ -15,11 +15,17 @@ class Snake():
 
     def create_snake(self):
         for position in STARTING_POSITIONS: #make new segment
-            new_segment = Turtle(shape="square")
-            new_segment.color('white')
-            new_segment.penup()
-            new_segment.goto(position)
-            self.segments.append(new_segment) #add new segment
+            self.add_segment(position)
+
+    def add_segment(self, position):
+        new_segment = Turtle(shape="square")
+        new_segment.color('white')
+        new_segment.penup()
+        new_segment.goto(position)
+        self.segments.append(new_segment) #add new segment
+
+    def extend(self): #Add new segments to snake
+        self.add_segment(self.segments[-1].position()) #get last segment coordinates, end of list
 
     def move(self):
         for seg_num in range(len(self.segments)-1,0,-1): #Move segments by rear segments taking x,y of front segments(start, stop, step)
