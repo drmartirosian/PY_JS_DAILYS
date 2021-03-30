@@ -33,8 +33,5 @@ while game_is_on == True:
     screen.update()
     ball.move()
 
-#Continued...
-
-#continued...
 #=============================END================================#
 screen.exitonclick()
