@@ -14,13 +14,17 @@ class Ball(Turtle):
         self.x_move = 10
         self.y_move = 10
 
-    def move(self):
+    def move(self): #Keep moving ball
         new_x = self.xcor()+self.x_move
         new_y = self.ycor()+self.y_move
         self.goto(new_x,new_y)
 
-    def bounce_y(self):
+    def bounce_y(self): #If hits cieling/floor
         self.y_move *= -1
     
-    def bounce_x(self):
+    def bounce_x(self): #If hits paddles
         self.x_move *= -1
+    
+    def reset_position(self): #Respawn ball
+        self.goto(0,0) #spawn ball back at center of screen
+        self.bounce_x() #after each go, reverse direction

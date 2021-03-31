@@ -2,6 +2,7 @@ from turtle import Screen, Turtle
 from random import random, randint
 from paddle import Paddle
 from ball import Ball
+from scoreboard import Scoreboard
 import time 
 #============================SCREEN SETTINGS======================#
 screen = Screen()
@@ -14,6 +15,8 @@ screen.tracer(0)
 #============================START===============================#
 #MAKE BALL
 ball = Ball()
+#MAKE SCOREBOARD
+scoreboard = Scoreboard()
 #MAKE BOTH PADDLES
 l_paddle = Paddle((-350,0))
 r_paddle = Paddle((350,0))
@@ -34,11 +37,19 @@ while game_is_on == True:
     if ball.ycor() > 280 or ball.ycor() < -280:
         ball.bounce_y()
     #Detect collision with paddles
-    if ball.distance(r_paddle) < 50 and ball.xcor() > 340:
+    if ball.distance(r_paddle) < 50 and ball.xcor() > 320 or ball.distance(l_paddle) < 50 and ball.xcor() < -320:
         ball.bounce_x()
+    #IF BALL GOES RIGHT...
+    if ball.xcor() > 380: 
+        ball.reset_position()
+        scoreboard.l_score += 1
+    if ball.xcor() < -380:
+        ball.reset_position()
+        scoreboard.r_score += 1
 
-    if ball.distance(l_paddle) < 50 and ball.xcor() < -340:
-        ball.bounce_x()
+
+
+
 
 
 
