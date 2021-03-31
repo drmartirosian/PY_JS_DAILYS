@@ -12,19 +12,17 @@ screen.tracer(0)
 
 
 #============================START===============================#
-#MAKE BOTH PADDLES
-left_paddle = Paddle((350,0))
-right_paddle = Paddle((-350,0))
+#MAKE BALL
 ball = Ball()
-
-#Move paddle
+#MAKE BOTH PADDLES
+l_paddle = Paddle((-350,0))
+r_paddle = Paddle((350,0))
+#Move BOTH paddle
 screen.listen()
-#PLAYER1
-screen.onkey(right_paddle.go_up,"w")
-screen.onkey(right_paddle.go_down,"s")
-#PLAYER2
-screen.onkey(left_paddle.go_up,"Up")
-screen.onkey(left_paddle.go_down,"Down")
+screen.onkey(l_paddle.go_up,"w")
+screen.onkey(l_paddle.go_down,"s")
+screen.onkey(r_paddle.go_up,"Up")
+screen.onkey(r_paddle.go_down,"Down")
 
 #UPDATE SCREEN
 game_is_on = True
@@ -36,10 +34,10 @@ while game_is_on == True:
     if ball.ycor() > 280 or ball.ycor() < -280:
         ball.bounce_y()
     #Detect collision with paddles
-    if ball.distance(right_paddle) > 50 and ball.xcor() > 340:
+    if ball.distance(r_paddle) < 50 and ball.xcor() > 340:
         ball.bounce_x()
 
-    if ball.distance(left_paddle) > 50 and ball.xcor() < -340:
+    if ball.distance(l_paddle) < 50 and ball.xcor() < -340:
         ball.bounce_x()
 
 
