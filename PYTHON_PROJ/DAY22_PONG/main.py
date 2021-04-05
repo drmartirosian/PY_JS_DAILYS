@@ -47,7 +47,7 @@ while game_is_on == True:
         ball.reset_position()
         scoreboard.r_score += 1
 
-
+#TO BE CONTINUED...
 
 
 
