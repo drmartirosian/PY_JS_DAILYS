@@ -29,8 +29,9 @@ screen.onkey(r_paddle.go_down,"Down")
 
 #UPDATE SCREEN
 game_is_on = True
+speed_up_ball = 0.1
 while game_is_on == True:
-    time.sleep(0.1)#slow things down slightly
+    time.sleep(speed_up_ball)#slow things down slightly
     screen.update()
     ball.move()
     #Detect collision with wall
@@ -39,13 +40,18 @@ while game_is_on == True:
     #Detect collision with paddles
     if ball.distance(r_paddle) < 50 and ball.xcor() > 320 or ball.distance(l_paddle) < 50 and ball.xcor() < -320:
         ball.bounce_x()
+        if speed_up_ball > 0.01:
+            speed_up_ball -= 0.01
     #IF BALL GOES RIGHT... OR LEFT
     if ball.xcor() > 380: 
         ball.reset_position()
-        scoreboard.l_score += 1
+        scoreboard.l_point()
+        speed_up_ball = 0.1
     if ball.xcor() < -380:
         ball.reset_position()
-        scoreboard.r_score += 1
+        scoreboard.r_point()
+        speed_up_ball = 0.1
+
 
 #TO BE CONTINUED...
 
