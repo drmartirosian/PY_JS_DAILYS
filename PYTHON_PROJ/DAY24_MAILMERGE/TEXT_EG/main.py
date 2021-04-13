@@ -9,6 +9,12 @@
 #     # print(contents)
 #     file.write('\nThe cake is a lie!')
 
-#GENERAT ENEW TXT FILES
-with open('new_file.txt',mode='w') as file:
-    file.write("\nThe cake is a lie.")
+# #GENERAT ENEW TXT FILES
+# with open('new_file.txt',mode='w') as file:
+#     file.write("\nThe cake is a lie.")
+
+#PARTICULAR ADDRESS LOCATION
+with open('../test.txt') as file:
+    contents = file.read()
+    print(contents)
+
