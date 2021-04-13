@@ -17,36 +17,21 @@
 # x = txt.strip() #removes spaces beind/infront of
 # print("of all fruits", x, "is my favorite")
 
-# with open('./Input/Letters/starting_letter.docx') as letter:
-#     contents = letter.read()
-#     print(contents)
 
+PLACEHOLDER = '[name]'
+# LIST OF NAMES
+with open('./Input/Names/invited_names.txt') as names_file:
+    names = names_file.readlines()
 
-
-
-
-
-
-
-
-with open('./Input/Letters/starting_letter.docx','r') as letter:
-    # ARAY OF NAMES
-    names_array = open('./Input/Names/invited_names.txt','r').readlines()
-
-    # GET ARAY OF EACH LINE OF LETTER
-    let_array = letter.readlines()
-
-    for name in names_array:
-        # CHANGE INTRO
-        idx = names_array.index(name)
-        let_array[0] = let_array[0].replace("[name]", names_array[idx])
-
-        # GENERATE LETTER
-        with open('./Output/ReadyToSend/new_letter.txt',mode='w') as file:
-            for line in let_array:
-                file.write(line)
-
-
-
-
-
+#ARRAY BROKEN INTO LIST
+with open('./Input/Letters/starting_letter.docx') as letter_file:
+    letter_contents = letter_file.read()
+    #Loop thru names
+    for name in names:
+        #removes \n after each name
+        stripped_name = name.strip() 
+        # Swap [name] out with each name in list
+        new_letter = letter_contents.replace(PLACEHOLDER,stripped_name)
+        #Write new letters with new_letter for their contents
+        with open(f'./Output/ReadyToSend/letter_for_{stripped_name}.docx',mode='w') as completed_letter:
+            completed_letter.write(new_letter)
